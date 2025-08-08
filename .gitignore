@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg
+*.egg-info/
+.env*
+
+# Virtual Environments
+.venv/
+env/
+venv/
+
+# Editor / OS files
+.DS_Store
+.idea/
+.vscode/
+
+# Playwright
+playwright/.cache/
