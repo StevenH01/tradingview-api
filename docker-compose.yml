@@ -1,0 +1,23 @@
+version: "3.8"
+
+services:
+  api:
+    build: .
+    container_name: tradingview-api
+    ports:
+      - "8000:8000"
+    environment:
+      TV_USERNAME: ${TV_USERNAME}
+      TV_PASSWORD: ${TV_PASSWORD}
+      REDIS_URL: redis://redis:6379/0
+      CACHE_TTL_SECONDS: 30
+    depends_on:
+      - redis
+    volumes:
+      - .:/app
+
+  redis:
+    image: redis:7
+    container_name: redis
+    ports:
+      - "6379:6379"
